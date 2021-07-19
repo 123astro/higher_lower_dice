@@ -83,28 +83,30 @@ public class Main {
 
             System.out.println(die.faceUpValue + " + " + die2.faceUpValue + " = " + (newTotal));
             if (total == newTotal) {
-                System.out.println("same number you lose - loser!");
+                System.out.println("Same number you lose - loser!");
                 return;
             }
 
             System.out.println(isLarger ? "Number is higher" : "Number is lower");
 
 
-            //boolean didWin = false;
             if (input.equals("h")) {
                 if (isLarger) {
                     System.out.println("You win - go again");
+                } else {
+                    newLoop = false;
+                    scanner.close();
+                    System.out.println("Game over - you lose - LOSER!");
                 }
             } else if (input.equals("l")) {
                 if (!isLarger) {
                     System.out.println("You win - go again");
                 } else {
                     newLoop = false;
+                    scanner.close();
                     System.out.println("Game over - you lose - LOSER!");
                 }
-
             }
-
         }
     }
 }
