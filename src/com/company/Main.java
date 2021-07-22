@@ -1,112 +1,25 @@
 package com.company;
 
 import javax.sound.midi.Soundbank;
-import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.SortedMap;
 
 public class Main {
 
     public static void main(String[] args) {
+        Yahtzee game = new Yahtzee();
+        game.play();
+//        Player will = new Player("Will");
+//        will.cup.roll();
+//        System.out.println(will.cup.displayCup());
+//        System.out.println(will.updateScore());
+//        System.out.println(will.score);
+//        will.cup.roll();
+//        System.out.println(will.cup.displayCup());
+//        System.out.println(will.updateScore());
+//        System.out.println(will.score);
 
-//        Scanner scanner = new Scanner(System.in);
-//        int total;
-//        int newTotal;
-//        Die die = new Die();
-//        Die die2 = new Die();
-//
-//
-//        die.roll();
-//        die2.roll();
-//
-//        total = die.faceUpValue + die2.faceUpValue;
-//
-//        System.out.println(die.faceUpValue + " + " + die2.faceUpValue + " = " + (die.faceUpValue + die2.faceUpValue));
-//        System.out.println("Will the next number be higher or lower?");
-//        String input = scanner.next();
-//
-//        die.roll();
-//        die2.roll();
-//
-//        newTotal = die.faceUpValue + die2.faceUpValue;
-//
-//        boolean isLarger = newTotal > total;
-//
-//        System.out.println(die.faceUpValue + " + " + die2.faceUpValue + " = " + (newTotal));
-//        if (total == newTotal) {
-//            System.out.println("same number you lose - loser!");
-//            return;
-//        }
-//
-//        System.out.println(isLarger ? "Number is higher" : "Number is lower");
-//
-//
-//
-//        boolean didWin = false;
-//        if (input.equals("h")) {
-//            if (isLarger) {
-//                didWin = true;
-//            }
-//        } else {
-//            if (!isLarger) {
-//                didWin = true;
-//            }
-//        }
-//        System.out.println(didWin ? "You Win!" : "You Lose Sucka!");
-//
-//        scanner.close();
-//    }
-//}
-
-        Scanner scanner = new Scanner(System.in);
-        int total;
-        int newTotal;
-        boolean newLoop = true;
-        Die die = new Die();
-        Die die2 = new Die();
-
-        while (newLoop) {
-            die.roll();
-            die2.roll();
-
-            total = die.faceUpValue + die2.faceUpValue;
-
-            System.out.println(die.faceUpValue + " + " + die2.faceUpValue + " = " + (die.faceUpValue + die2.faceUpValue));
-            System.out.println("Will the next number be higher or lower?");
-            String input = scanner.next();
-
-            die.roll();
-            die2.roll();
-
-            newTotal = die.faceUpValue + die2.faceUpValue;
-
-            boolean isLarger = newTotal > total;
-
-            System.out.println(die.faceUpValue + " + " + die2.faceUpValue + " = " + (newTotal));
-            if (total == newTotal) {
-                System.out.println("Same number you lose - loser!");
-                return;
-            }
-
-            System.out.println(isLarger ? "Number is higher" : "Number is lower");
-
-
-            if (input.equals("h")) {
-                if (isLarger) {
-                    System.out.println("You win - go again");
-                } else {
-                    newLoop = false;
-                    scanner.close();
-                    System.out.println("Game over - you lose - LOSER!");
-                }
-            } else if (input.equals("l")) {
-                if (!isLarger) {
-                    System.out.println("You win - go again");
-                } else {
-                    newLoop = false;
-                    scanner.close();
-                    System.out.println("Game over - you lose - LOSER!");
-                }
-            }
-        }
     }
 }
