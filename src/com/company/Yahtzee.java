@@ -34,7 +34,7 @@ public class Yahtzee {
     public void turn() {
         player.cup.roll();
 
-        for (int i = 0; i < 2; i++) { //5
+        for (int i = 0; i < 2; i++) {
             System.out.println(player.cup.displayCup());
             getSelections();
         }
